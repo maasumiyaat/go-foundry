@@ -220,3 +220,46 @@ func TestValidParentheses(t *testing.T) {
 		}
 	}
 }
+
+func TestLC28(t *testing.T) {
+	type testCases struct {
+		haystack string
+		needle   string
+		output   int
+	}
+
+	cases := []testCases{
+		{"hello", "ll", 2},
+		{"aaaaa", "bba", -1},
+		{"", "", 0},
+		{"mississippi", "issip", 4},
+	}
+
+	for _, tc := range cases {
+		got := LC28(tc.haystack, tc.needle)
+
+		if tc.output != got {
+			t.Errorf("Got : %d, Wanted : %d", got, tc.output)
+		}
+	}
+}
+
+func TestLongestCommonPrefix(t *testing.T) {
+	type testcases struct {
+		input  []string
+		output string
+	}
+
+	cases := []testcases{
+		{[]string{"flower", "flight", "flow"}, "fl"},
+		{[]string{"dog", "racecar", "car"}, ""},
+	}
+
+	for _, tc := range cases {
+		got := LongestCommonPrefix(tc.input)
+
+		if tc.output != got {
+			t.Errorf("Got : %s, Wanted : %s", got, tc.output)
+		}
+	}
+}

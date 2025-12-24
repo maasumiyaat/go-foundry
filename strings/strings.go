@@ -153,3 +153,30 @@ func IsValidParentheses(s string) bool {
 		return false
 	}
 }
+
+// return the index of the first occurrence of needle in haystack
+func LC28(haystack string, needle string) int {
+	// return strings.Index(haystack, needle)
+	if needle == "" {
+		return 0
+	}
+
+	hLen := len(haystack)
+	nLen := len(needle)
+
+	for i := 0; i <= hLen-nLen; i++ {
+		if haystack[i:i+nLen] == needle {
+			return i
+		}
+	}
+
+	return -1
+}
+
+func LongestCommonPrefix(strs []string) string {
+	var result string
+	for i := 0; i < len(strs); i++ {
+
+	}
+	return result
+}
